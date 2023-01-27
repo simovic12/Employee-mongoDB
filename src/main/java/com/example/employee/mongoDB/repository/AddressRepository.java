@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface AddressRepository extends MongoRepository<Address, Long> {
-    Optional<Address> findByEmployeeId(Long id);
+    Optional<Address> findAddressByEmployeeId(Long id);
 }
