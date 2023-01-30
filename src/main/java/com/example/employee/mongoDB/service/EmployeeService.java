@@ -28,7 +28,7 @@ public class EmployeeService {
             return null;
         }
 
-        var newEmployee = repository.insert(employee);
+        var newEmployee = repository.save(employee);
         return newEmployee;
     }
 
