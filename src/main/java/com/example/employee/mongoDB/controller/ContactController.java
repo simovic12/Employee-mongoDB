@@ -1,7 +1,6 @@
 package com.example.employee.mongoDB.controller;
 
 import com.example.employee.mongoDB.entity.Contact;
-import com.example.employee.mongoDB.exception.AddressNotValidException;
 import com.example.employee.mongoDB.exception.ContactNotValidException;
 import com.example.employee.mongoDB.service.ContactService;
 import lombok.AllArgsConstructor;
@@ -21,7 +20,7 @@ public class ContactController {
     private ContactService service;
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<Contact> updateContact(@PathVariable Long id, @RequestBody Contact contactRequest) throws ContactNotValidException, AddressNotValidException {
+    public ResponseEntity<Contact> updateContact(@PathVariable Long id, @RequestBody Contact contactRequest) throws ContactNotValidException {
         var contact = service.updateContact(id, contactRequest);
 
         return new ResponseEntity<>(contact, HttpStatus.OK);
